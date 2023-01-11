@@ -11,8 +11,6 @@ class StatisticController extends Controller
 	{
 		$users = Statistic::all();
 
-		logger($users);
-
-		return view('statistic');
+		return view('statistic', compact('users'));
 	}
 }
