@@ -14,8 +14,4 @@ use App\Http\Controllers\StatisticController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
-Route::get('/statistic', [StatisticController::class, 'index']);
+Route::get('/', [StatisticController::class, 'index']);

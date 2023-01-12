@@ -9,10 +9,9 @@ class StatisticController extends Controller
 {
     public function index()
 	{
-		$users = Statistic::all();
+		$users = Statistic::all()->pluck('username');
+		$times = Statistic::all()->pluck('times');
 
-		logger($users);
-
-		return view('statistic', compact('users'));
+		return view('statistic', compact('users', 'times'));
 	}
 }
