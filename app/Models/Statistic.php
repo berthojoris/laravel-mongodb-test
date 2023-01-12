@@ -15,8 +15,9 @@ class Statistic extends Model
 
 	public function getTimesAttribute()
 	{
-		$start = Carbon::createFromTimestamp($this->getAttribute('loginStart'))->toDateTimeString();
-		$end = Carbon::createFromTimestamp($this->getAttribute('loginEnd'))->toDateTimeString();
-		return Carbon::parse($start)->diffInMinutes(Carbon::parse($end));
+		$start = Carbon::createFromTimestamp($this->getAttribute('loginStart'));
+		$end = Carbon::createFromTimestamp($this->getAttribute('loginEnd'));
+
+		return $start->diffInMinutes($end);
 	}
 }
